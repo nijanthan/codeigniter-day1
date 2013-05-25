@@ -136,6 +136,12 @@ class Site_model extends  CI_Model
 
 <?php  print_r($nijan12)?>
 
+
+or
+
+<div><?php foreach ($nijan12 as $row):?>
+<h1><?php echo $row->title; ?> </h1>
+<?php endforeach;?>
 </pre>
 </body>
 </html>
