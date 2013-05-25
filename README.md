@@ -65,3 +65,92 @@ $config['base_url']	= 'http://localhost/day/codeday1/index.php';
 
 
 
+
+
+
+
+how to get data from data base:
+
+
+
+------------------controller-------------------
+nijan.php
+
+
+<?php 
+
+
+class Nijan extends CI_Controller
+{
+	function index()
+	{
+
+		$this->load->model('site_model');
+		
+		$data['nijan12']=$this->site_model->getAll();
+		$this->load->view('home',$data);
+		
+	}
+}
+
+
+-------------------------model------------------------------
+
+model.php
+
+
+<?php
+
+
+class Site_model extends  CI_Model
+{
+	function getAll(){
+	
+	
+		
+		$q = $this->db->get('nijan');
+		
+	
+		foreach ($q->result() as $row)
+		{
+		$data[]=$row;
+		}
+		return $data;
+		}
+	
+	
+-------------------------view-------------------
+<?php ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+</br>
+<h1>nijan hi da</h1> 
+<pre>
+
+<?php  print_r($nijan12)?>
+
+</pre>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
