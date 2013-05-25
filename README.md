@@ -48,6 +48,7 @@ view:
 <?php $nijan ?>
 
 output:
+hi da nijssssan
 
 
 
@@ -55,7 +56,7 @@ output:
 
 
 
-how to delete index option
+how to delete index.php option --config file
 
   -------routine.php-----
 $route['default_controller'] = "nijan";
@@ -139,7 +140,7 @@ class Site_model extends  CI_Model
 </body>
 </html>
 
-
+------------------------autoload add('database')--------------------
 
 
 
