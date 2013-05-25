@@ -49,3 +49,19 @@ view:
 
 output:
 
+
+
+
+
+
+
+how to delete index option
+
+  -------routine.php-----
+$route['default_controller'] = "nijan";
+---------config.php--------
+
+$config['base_url']	= 'http://localhost/day/codeday1/index.php';
+
+
+
