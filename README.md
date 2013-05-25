@@ -26,6 +26,11 @@ class nijan extends CI_Controller
 		}
 	function monish()
 	{
+	
+	      $nijan['nijan']="hi da nijan";
+	      
+	      
+	
 		echo "hi monish";
 	}
 }
@@ -37,7 +42,10 @@ view:
 
 <?php $hi ?>
 <?php $hi ?>
+---------------about.php--------------
 
+
+<?php $nijan ?>
 
 output:
 
