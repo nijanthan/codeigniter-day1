@@ -151,7 +151,8 @@ or
  
  2.
  
-database -->data table --> id ,author,title
+database -->ci_series -->data--> id ,author,title
+database -->ci_series -->test -->id ,title
 
 ------------------------------controller----------------------
 nijan.php
