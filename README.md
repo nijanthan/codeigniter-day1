@@ -148,12 +148,71 @@ or
 
 ------------------------autoload add('database')--------------------
 
+ 
+ 2.
+ 
+database -->data table --> id ,author,title
+
+------------------------------controller----------------------
+nijan.php
+<?php
+class nijan1 extends CI_Controller{
+	
+	function index(){
+	
+	$this->load->model('Data_model');
+   $data['rows']=$this->Data_model->getAll();	
+	$this->load->view('home', $data);
+	}
+
+}
+
+------------------------------model-----------------------
+Data_model.php
+
+<?php
+class Data_model extends CI_Model
+{
+	
+	function getAll() {
+ $q=$this->db->query("SELECT * FROM data");
+		
+if($q->num_rows()>0){ 
+	foreach($q->result() as $row)
+	
+	$data[]=$row;
+	}
+	
+	return $data;
+	
+	}	
+	
+}
+
+---------------------------view------------------------------
+home.php
 
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div><?php foreach ($rows as $r){
+	echo $r->author;
+	echo '<h1>'. $r->title. '</h1>'.'</br>';
+
+echo $r->id;
 
 
+}
+?>
 
-
+</div>
+</body>
+</html>
 
 
 
